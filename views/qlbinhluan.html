@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+        }
+        .header .logo {
+            font-weight: bold;
+        }
+        .header .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            padding-top: 60px;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar li {
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #444;
+        }
+        .sidebar li:hover {
+            background-color: #444;
+        }
+        .sidebar li i {
+            margin-right: 10px;
+        }
+        /* Main content styling */
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        .breadcrumb {
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        /* Comment list styling */
+        .comments-header {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .comments-header div {
+            padding: 10px 20px;
+            background-color: #f7f7f7;
+            color: #333;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .comments-header div.active {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .comment-list {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+        }
+        .comment-list td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+        .comment-list td img {
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .comment-meta {
+            color: #888;
+            font-size: 0.9em;
+        }
+        .comment-text {
+            background-color: #ffffe0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        /* Bulk Actions */
+        .actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .actions select, .actions button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .actions button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+        }
+        .actions button:hover {
+            background-color: #0056b3;
+        }
+        /* Footer styling */
+        .footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: calc(100% - 250px);
+            margin-left: 250px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">Administrator</div>
+        <div class="menu">
+            <a href="#" style="color: #fff;">Vào web</a>
+            <a href="#" style="color: #fff;">Liên hệ</a>
+            <span>Xin chào admin</span>
+        </div>
+    </div>
+    
+    <div class="sidebar">
+        <ul>
+            <li class="blue-text"><a href="trangchu.html"><i class="fas fa-home"></i></a> Trang chủ Admin</li>
+            <li><a href="qldanhmuc.html"><i class="fas fa-th-list"></i></a> Quản lý danh mục sản phẩm</li>
+            <li><a href="qlsanpham.html"><i class="fas fa-box"></i></a> Quản lý sản phẩm</li>
+            <li><a href="qldonhang.html"><i class="fas fa-clipboard-list"></i> </a>Quản lý danh sách đơn hàng</li>
+            <li><i class="fas fa-sync-alt"></i> Xác nhận cập nhật trạng thái đơn hàng</li>
+            <li><a href="qlbinhluan.html"><i class="fas fa-comments"></i> </a>Quản lý bình luận</li>
+            <li><a href="qlnguoidung.html"><i class="fas fa-users"></i></a> Quản lý người dùng</li>
+            <li><a href="phanquyen.html"><i class="fas fa-user-shield"></i></a> Phân quyền</li>
+            <li><a href="thongke.html"><i class="fas fa-chart-line"></i></a> Thống kê</li>
+            <li><a href="spbienthe.html"><i class="fas fa-cogs"></i></a> Quản lý sản phẩm có biến thể</li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Breadcrumb Navigation -->
+        <div class="breadcrumb">
+            Trang chủ > Bình luận > Comments
+        </div>
+
+        <!-- Comments Header Tabs -->
+        <div class="comments-header">
+            <div class="active">All</div>
+            <div>Pending (1)</div>
+            <div>Spam (0)</div>
+            <div>Trash (0)</div>
+        </div>
+
+        <!-- Comment List -->
+        <table class="comment-list">
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>
+                    <img src="https://via.placeholder.com/35" alt="User Icon">
+                    <div>Phạm Trang</div>
+                    <div class="comment-meta">Submitted on 2024/11/14 at 9:39 PM</div>
+                    <div class="comment-text">Thử nghiệm tính năng bình luận và chờ duyệt</div>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>
+                    <img src="https://via.placeholder.com/35" alt="User Icon">
+                    <div>Long Nguyễn</div>
+                    <div class="comment-meta">Submitted on 2024/11/5 at 10:30 AM</div>
+                    <div class="comment-text">xin chào mọi người</div>
+                </td>
+            </tr>
+        </table>
+
+        <!-- Bulk Actions -->
+        <div class="actions">
+            <select>
+                <option>Bulk Actions</option>
+                <option>Approve</option>
+                <option>Mark as Spam</option>
+                <option>Delete</option>
+            </select>
+            <button>Apply</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>GLOW</p>
+        <p>Email: longnqlph53488@gmail.com</p>
+        <p>Hotline: 0975753333</p>
+        <p>Website: GLOW.com, GLOW.vn</p>
+    </div>
+</body>
+</html>

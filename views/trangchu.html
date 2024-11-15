@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+        }
+        .header .logo {
+            font-weight: bold;
+        }
+        .header .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            padding-top: 60px;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar li {
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #444;
+        }
+        .sidebar li:hover {
+            background-color: #444;
+        }
+        .sidebar li i {
+            margin-right: 10px;
+        }
+        .blue-text {
+            color: #1e90ff;
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        .main-content h2 {
+            font-size: 24px;
+            color: #1e90ff;
+            margin-bottom: 20px;
+        }
+        .content-box {
+            background-color: #e6f7d9;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            font-weight: bold;
+        }
+        .footer a {
+            color: #ff3333;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="logo">Administrator</div>
+    <div class="menu">
+        <a href="#" style="color: #fff;">Vào web</a>
+        <a href="#" style="color: #fff;">Liên hệ</a>
+        <span>Xin chào admin</span>
+    </div>
+</div>
+
+<div class="sidebar">
+    <ul>
+        <li class="blue-text"><a href="trangchu.html"><i class="fas fa-home"></i></a> Trang chủ Admin</li>
+        <li><a href="qldanhmuc.html"><i class="fas fa-th-list"></i></a> Quản lý danh mục sản phẩm</li>
+        <li><a href="qlsanpham.html"><i class="fas fa-box"></i></a> Quản lý sản phẩm</li>
+        <li><a href="qldonhang.html"><i class="fas fa-clipboard-list"></i> </a>Quản lý danh sách đơn hàng</li>
+        <li><i class="fas fa-sync-alt"></i> Xác nhận cập nhật trạng thái đơn hàng</li>
+        <li><a href="qlbinhluan.html"><i class="fas fa-comments"></i> </a>Quản lý bình luận</li>
+        <li><a href="qlnguoidung.html"><i class="fas fa-users"></i></a> Quản lý người dùng</li>
+        <li><a href="phanquyen.html"><i class="fas fa-user-shield"></i></a> Phân quyền</li>
+        <li><a href="thongke.html"><i class="fas fa-chart-line"></i></a> Thống kê</li>
+        <li><a href="spbienthe.html"><i class="fas fa-cogs"></i></a> Quản lý sản phẩm có biến thể</li>
+    </ul>
+</div>
+
+<div class="main-content">
+    <h2>Trang chủ Website</h2>
+    <div class="content-box">
+        Nếu cần hỗ trợ kỹ thuật vui lòng thực hiện 1 trong 3 cách sau:
+        <ol>
+            <li>Truy cập <a href="mailto:support@glow.com">support@glow.com</a> và gửi yêu cầu hỗ trợ.</li>
+            <li>Gửi email cho cửa hàng <a href="mailto:glow25@caugiay.vn">glow25@caugiay.vn</a></li>
+            <li>Gọi cho số hotline: <a href="tel:0979575333" style="color: #ff3333;">0979575333</a></li>
+        </ol>
+    </div>
+</div>
+
+<div class="footer">
+    GLOW<br>
+    Email: longnqlph53488@gmail.com<br>
+    Hotline: <a href="tel:0979575333">0979575333</a><br>
+    Website: GLOW.com, GLOW.vn
+</div>
+
+</body>
+</html>

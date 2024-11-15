@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+        }
+        .header .logo {
+            font-weight: bold;
+        }
+        .header .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            padding-top: 60px;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar li {
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #444;
+        }
+        .sidebar li:hover {
+            background-color: #444;
+        }
+        .sidebar li i {
+            margin-right: 10px;
+        }
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+        }
+        .header a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+        .chart-container {
+            margin-top: 20px;
+        }
+        .footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: calc(100% - 250px);
+            margin-left: 250px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">Administrator</div>
+        <div class="menu">
+            <a href="#" style="color: #fff;">Vào web</a>
+            <a href="#" style="color: #fff;">Liên hệ</a>
+            <span>Xin chào admin</span>
+        </div>
+    </div>
+    
+    <div class="sidebar">
+        <ul>
+            <li class="blue-text"><a href="trangchu.html"><i class="fas fa-home"></i></a> Trang chủ Admin</li>
+            <li><a href="qldanhmuc.html"><i class="fas fa-th-list"></i></a> Quản lý danh mục sản phẩm</li>
+            <li><a href="qlsanpham.html"><i class="fas fa-box"></i></a> Quản lý sản phẩm</li>
+            <li><a href="qldonhang.html"><i class="fas fa-clipboard-list"></i> </a>Quản lý danh sách đơn hàng</li>
+            <li><i class="fas fa-sync-alt"></i> Xác nhận cập nhật trạng thái đơn hàng</li>
+            <li><a href="qlbinhluan.html"><i class="fas fa-comments"></i> </a>Quản lý bình luận</li>
+            <li><a href="qlnguoidung.html"><i class="fas fa-users"></i></a> Quản lý người dùng</li>
+            <li><a href="phanquyen.html"><i class="fas fa-user-shield"></i></a> Phân quyền</li>
+            <li><a href="thongke.html"><i class="fas fa-chart-line"></i></a> Thống kê</li>
+            <li><a href="spbienthe.html"><i class="fas fa-cogs"></i></a> Quản lý sản phẩm có biến thể</li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <div class="header">
+            <span>Xin chào Admin</span>
+            <div>
+                <a href="#">Vào web</a>
+                <a href="#">Liên hệ</a>
+            </div>
+        </div>
+
+        <!-- Statistics Section -->
+        <div class="chart-container">
+            <h3>Thống kê truy cập tháng 11/2024</h3>
+            <canvas id="accessChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>GLOW</p>
+        <p>Email: longnqlph53488@gmail.com</p>
+        <p>Hotline: 0975753333</p>
+        <p>Website: GLOW.com, GLOW.vn</p>
+    </div>
+
+    <!-- Chart.js Script -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('accessChart').getContext('2d');
+        const accessChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['D1', 'D2', 'D3', 'D4', 'D5', 'D6', 'D7', 'D8', 'D9', 'D10', 'D11', 'D12', 'D13', 'D14', 'D15', 'D16', 'D17', 'D18', 'D19', 'D20', 'D21', 'D22', 'D23', 'D24', 'D25', 'D26', 'D27', 'D28'],
+                datasets: [{
+                    label: 'Daily Visits',
+                    data: [1, 1.2, 1.5, 2, 2.5, 3, 2.8, 3.2, 2.9, 3.5, 4, 3.8, 3.2, 3.5, 4.2, 3.7, 4.3, 3.9, 4.5, 4.8, 3.6, 4.1, 3.9, 4.5, 4.2, 5, 4.7, 5],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1,
+                    fill: true,
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 5.5
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

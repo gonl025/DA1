@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Tổng thể */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+        }
+        .header .logo {
+            font-weight: bold;
+        }
+        .header .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            padding-top: 60px;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar li {
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #444;
+        }
+        .sidebar li:hover {
+            background-color: #444;
+        }
+        .sidebar li i {
+            margin-right: 10px;
+        }
+        .blue-text {
+            color: #1e90ff; /* Xanh da trời */
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        .breadcrumbs {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .table-container {
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .action-icons a {
+            margin: 0 5px;
+            color: #d9534f;
+            text-decoration: none;
+        }
+        .add-button {
+            padding: 8px 16px;
+            background-color: #1e90ff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            font-weight: bold;
+            margin-top: 20px;
+            position: fixed;
+            bottom: 0;
+            width: calc(100% - 250px);
+            left: 250px;
+        }
+        .footer a {
+            color: #ff3333;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+    <div class="logo">Administrator</div>
+    <div class="menu">
+        <a href="#" style="color: #fff;">Vào web</a>
+        <a href="#" style="color: #fff;">Liên hệ</a>
+        <span>Xin chào admin</span>
+    </div>
+</div>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <ul>
+        <li class="blue-text"><a href="trangchu.html"><i class="fas fa-home"></i></a> Trang chủ Admin</li>
+        <li><a href="qldanhmuc.html"><i class="fas fa-th-list"></i></a> Quản lý danh mục sản phẩm</li>
+        <li><a href="qlsanpham.html"><i class="fas fa-box"></i></a> Quản lý sản phẩm</li>
+        <li><a href="qldonhang.html"><i class="fas fa-clipboard-list"></i> </a>Quản lý danh sách đơn hàng</li>
+        <li><i class="fas fa-sync-alt"></i> Xác nhận cập nhật trạng thái đơn hàng</li>
+        <li><a href="qlbinhluan.html"><i class="fas fa-comments"></i> </a>Quản lý bình luận</li>
+        <li><a href="qlnguoidung.html"><i class="fas fa-users"></i></a> Quản lý người dùng</li>
+        <li><a href="phanquyen.html"><i class="fas fa-user-shield"></i></a> Phân quyền</li>
+        <li><a href="thongke.html"><i class="fas fa-chart-line"></i></a> Thống kê</li>
+        <li><a href="spbienthe.html"><i class="fas fa-cogs"></i></a> Quản lý sản phẩm có biến thể</li>
+    </ul>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+    <div class="breadcrumbs">
+        Trang chủ > Danh mục
+    </div>
+    <button class="add-button">+ Thêm mới</button>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th><input type="checkbox"></th>
+                    <th>ID</th>
+                    <th>Họ tên</th>
+                    <th>Quyền hạn</th>
+                    <th>Hiển thị </th>                   
+                    <th>Tác vụ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>01</td>
+                    <td>Quốc Long</td>
+                    <td>Administrator</td>
+                    <td>Hiện</td>                                 
+                    <td class="action-icons">
+                        
+                        <a href="#"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>02</td>
+                    <td>Bá Tránh</td>
+                    <td>Administrator</td>
+                    <td>Hiện</td>
+                    <td class="action-icons">
+                       
+                        <a href="#"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>03</td>
+                    <td>Phạm Trang</td>
+                    <td>Administrator</td>
+                    <td>Hiện</td>
+                                   
+                    <td class="action-icons">
+                       
+                        <a href="#"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+                               
+                <tr>
+                   
